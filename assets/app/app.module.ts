@@ -14,6 +14,8 @@ import {SignupComponent} from "./auth/signup.component";
 import {SigninComponent} from "./auth/signin.component";
 
 import {router} from "./app.routing";
+import {HttpModule} from "@angular/http";
+import {APP_CONFIG, AppConfig} from "./app.config";
 
 @NgModule({
     declarations: [
@@ -32,7 +34,11 @@ import {router} from "./app.routing";
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
+        HttpModule,
         router
+    ],
+    providers: [
+        { provide: APP_CONFIG, useValue: AppConfig}
     ],
     bootstrap: [
         AppComponent
